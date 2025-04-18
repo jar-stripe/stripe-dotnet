@@ -11,5 +11,11 @@ jobs:
     name: Merge PRs (from our merge script) must create merge commits
     if: ${{ contains(github.head_ref, '/merge-') && github.pull_request.merge_method != 'merge' }}
     runs-on: ubuntu-latest
+
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
       - run: exit 1
