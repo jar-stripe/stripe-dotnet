@@ -1,4 +1,4 @@
-name: CI
+name: rules
 
 on:
   workflow_dispatch: {}
@@ -9,7 +9,7 @@ on:
 jobs:
   require_merge_commit_on_merge_PR:
     name: Merge PRs (from our merge script) must create merge commits
-    if: ${{ contains(github.head_ref, '/merge-') && event.pull_request.merge_method != 'merge' }}
+    if: ${{ contains(github.head_ref, '/merge-') && github.pull_request.merge_method != 'merge' }}
     runs-on: ubuntu-latest
     steps:
       - run: exit 1
