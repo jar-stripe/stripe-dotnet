@@ -1,5 +1,7 @@
 # Changelog
 
+Test change
+
 ## 45.10.0 - 2024-08-29
 * [#2957](https://github.com/stripe/stripe-dotnet/pull/2957) Generate SDK for OpenAPI spec version 1230
   * Add support for `StatusDetails` on `TestHelpersTestClock`
